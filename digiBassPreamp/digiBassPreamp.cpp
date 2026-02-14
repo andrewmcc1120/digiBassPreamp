@@ -6,7 +6,6 @@ using namespace daisy;
 using namespace daisy::seed;
 using namespace daisysp;
 
-// Custom Biquad class
 
 struct MyBiquad
 {
@@ -33,7 +32,7 @@ struct MyBiquad
     }
 };
 
-// 3-Band EQ class
+
 
 class EQ3Band
 {
@@ -42,12 +41,10 @@ class EQ3Band
     {
         sr_ = sr;
 
-        // Fixed center frequencies
         bass_freq_   = 80.0f;
         mid_freq_    = 800.0f;
         treble_freq_ = 4000.0f;
 
-        // Q factors
         bass_q_   = 0.707f;
         mid_q_    = 1.0f;
         treble_q_ = 0.707f;
@@ -66,6 +63,7 @@ class EQ3Band
     }
 
     // Potentiometer input: floating point from 0 to 1
+
     void SetBass(float pot)
     {
         float db = PotToDb(pot, 15.0f);
@@ -203,3 +201,4 @@ int main(void)
         System::Delay(1);
     }
 }
+
